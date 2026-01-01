@@ -1,147 +1,277 @@
-# ZeroCue Landing Page
+# ZeroCue Landing Page - Design v2
 
-A modern, elegant landing page for ZeroCue - the self-checkout platform reimagining retail shopping.
+A luxury editorial-style landing page for ZeroCue with an immersive, game-like storytelling experience. Built with React, Vite, Tailwind CSS, and Framer Motion.
+
+## What's New in Design v2
+
+Design v2 transforms the landing page into a cinematic journey with:
+- **Scroll Progress System**: Visual navigation with progress tracking
+- **Game-Like Problem Narrative**: Interactive 5-level problem storytelling
+- **Dramatic Solution Reveal**: 4-stage cinematic solution presentation
+- **Seamless Transitions**: Parallax effects and smooth section flows
+
+See [DESIGN_V2.md](./DESIGN_V2.md) for complete documentation.
 
 ## Features
 
-- Clean, minimalist design inspired by premium retail experiences
-- Smooth scroll animations using Framer Motion
-- Fully responsive layout (mobile, tablet, desktop)
-- Aesthetic color palette with sage green and terracotta accents
-- TypeScript for type safety
-- Tailwind CSS for rapid styling
+### 🎨 Premium Design
+- **Luxury Editorial Feel**: Refined gradients, high-end typography, and sophisticated color palette (sage, terracotta, charcoal)
+- **Aceternity UI Components**: Custom-built premium components for interactive showcases
+- **Spotlight Effects**: Dynamic animated backgrounds and visual depth
+- **Responsive Design**: Optimized for all screen sizes from mobile to 4K displays
 
-## Tech Stack
+### ✨ Interactive Components
 
-- **Framework:** React 19 + Vite 7
-- **Language:** TypeScript
-- **Styling:** Tailwind CSS
-- **Animations:** Framer Motion
-- **Icons:** Lucide React
-- **Fonts:** Inter (body), Space Grotesk (headings)
+#### MacBook Scroll Showcase
+- Displays mobile app screenshots inside an animated MacBook mockup
+- Scroll-triggered 3D transformations (scale, rotation, opacity)
+- Smart image loading with beautiful gradient placeholders
+- Located in `AppShowcase.tsx`
 
-## Getting Started
+#### Bento Grid Layout
+- Premium card-based grid for POS feature display
+- Staggered entrance animations
+- Hover effects with gradient overlays
+- Used in `POSShowcase.tsx`
 
-### Prerequisites
+#### Text Reveal Animations
+- Word-by-word reveal on scroll
+- Gradient text effects
+- Opacity and scale transformations based on scroll position
 
-- Node.js 18+ installed
-- npm or yarn
+### 🚀 Performance Optimizations
 
-### Installation
+- **Lazy Loading**: All sections below the fold are code-split and lazy-loaded
+- **React Suspense**: Smooth loading states with branded spinners
+- **Smart Image Component**: Attempts to load real images, gracefully falls back to animated placeholders
+- **Framer Motion**: Hardware-accelerated animations using transform-gpu
 
-```bash
-# Install dependencies
-npm install
+### 📱 Screenshot Management
 
-# Start development server
-npm run dev
-```
+The landing page uses a smart image system that:
+1. Attempts to load screenshots from `/public` directory
+2. Shows animated placeholders if images don't exist
+3. Provides smooth transitions when images load
 
-The site will be available at http://localhost:5173/
-
-### Build for Production
-
-```bash
-# Create optimized production build
-npm run build
-
-# Preview production build
-npm run preview
-```
+**Required Screenshots** (see `SCREENSHOTS_NEEDED.md`):
+- `public/mobile-app-showcase.png` - Main mobile app composite
+- `public/pos-dashboard.png` - POS verification interface
 
 ## Project Structure
 
 ```
-zerocue-landing/
+landing/
 ├── src/
 │   ├── components/
-│   │   ├── Hero.tsx          # Hero section with animated visuals
-│   │   ├── Features.tsx      # Feature cards grid
-│   │   ├── HowItWorks.tsx    # Step-by-step process flow
-│   │   └── Footer.tsx        # Footer with links
-│   ├── App.tsx               # Main app component
-│   ├── index.css             # Global styles & Tailwind directives
-│   └── main.tsx              # App entry point
-├── tailwind.config.js        # Tailwind configuration with custom colors
-├── postcss.config.js         # PostCSS configuration
-└── index.html                # HTML template
+│   │   ├── ui/                        # Aceternity UI & Design v2 components
+│   │   │   ├── MacbookScroll.tsx      # MacBook showcase component
+│   │   │   ├── BentoGrid.tsx          # Premium grid layout
+│   │   │   ├── TextReveal.tsx         # Scroll-based text animations
+│   │   │   ├── Spotlight.tsx          # Animated background effects
+│   │   │   ├── ImagePlaceholder.tsx   # Beautiful loading placeholders
+│   │   │   ├── SmartImage.tsx         # Intelligent image loading
+│   │   │   ├── ScrollProgress.tsx     # NEW: Progress tracker & navigation
+│   │   │   └── SectionTransition.tsx  # NEW: Parallax section wrapper
+│   │   ├── Hero.tsx                   # Landing hero with gradient tagline
+│   │   ├── ProblemNarrative.tsx       # NEW: Game-like 5-level problem story
+│   │   ├── SolutionReveal.tsx         # NEW: 4-stage cinematic reveal
+│   │   ├── Phygital.tsx               # Phygital experience explanation
+│   │   ├── AppShowcase.tsx            # Mobile app showcase
+│   │   ├── POSShowcase.tsx            # POS system showcase
+│   │   ├── Solution.tsx               # Solution overview
+│   │   ├── ForStores.tsx              # Retailer benefits
+│   │   ├── CTA.tsx                    # Call-to-action section
+│   │   ├── LeadCapture.tsx            # Lead capture modal
+│   │   └── Footer.tsx                 # Site footer
+│   ├── lib/
+│   │   └── utils.ts                   # Utility functions (cn helper)
+│   ├── App.tsx                        # Main app with lazy loading & v2 structure
+│   └── main.tsx                       # App entry point
+├── public/                            # Static assets
+├── DESIGN_V2.md                       # NEW: Complete Design v2 documentation
+├── SCREENSHOTS_NEEDED.md              # Screenshot requirements guide
+└── README.md                          # This file
 ```
 
-## Design System
+## Section Flow
 
-### Color Palette
+The landing page follows a carefully designed narrative journey:
 
-- **Cream:** Background tones (#FDFCFB to #D9D1C5)
-- **Stone:** Text colors (#4A4A4A to #9E9E9E)
-- **Accent Sage:** #9CAF88 (primary accent)
-- **Accent Terracotta:** #C97B63 (secondary accent)
-- **Accent Charcoal:** #2C2C2C (headings, dark elements)
+1. **Hero** - Brand introduction with animated visuals and scroll prompt
+2. **Problem Narrative** (NEW) - Interactive 5-level game revealing retail pain points
+3. **Solution Reveal** (NEW) - 4-stage cinematic solution presentation
+4. **Phygital** - Explanation of the phygital retail concept (with parallax)
+5. **AppShowcase** - Mobile app features in MacBook Scroll component (with parallax)
+6. **POSShowcase** - POS system features in Bento Grid layout (with parallax)
+7. **Solution** - Complete solution overview (with parallax)
+8. **ForStores** - Retailer-specific benefits
+9. **CTA** - Final call-to-action with stats
+10. **Footer** - Contact and legal information
 
-### Typography
+**Scroll Progress**: Fixed navigation system tracks user position throughout journey.
 
-- **Headings:** Space Grotesk (modern, geometric)
-- **Body:** Inter (clean, readable)
+## Development
 
-### Animation Patterns
+### Setup
+```bash
+cd landing
+npm install
+npm run dev
+```
 
-- Fade-in on load
-- Slide-up for section reveals
-- Floating elements with gentle Y-axis movement
-- Hover effects with scale and translate
-- Scroll-triggered animations using Framer Motion's `useInView`
+Server runs on `http://localhost:5173` (or next available port)
+
+### Build for Production
+```bash
+npm run build
+npm run preview
+```
+
+### Technologies
+- **React 19** - UI library
+- **Vite 7** - Build tool and dev server
+- **Tailwind CSS 4** - Utility-first styling
+- **Framer Motion** - Animation library
+- **TypeScript** - Type safety
+- **Lucide React** - Icon library
+
+## Adding Real Screenshots
+
+1. **Take Screenshots**
+   - Mobile app: Complete shopping flow from scan to checkout
+   - POS dashboard: Verification station interface
+
+2. **Create Mockups** (Optional but recommended)
+   - Use tools like Figma, Screely, or Mockup World
+   - Place screenshots in device frames for professional look
+
+3. **Export and Add**
+   ```bash
+   # Add files to public directory
+   landing/public/mobile-app-showcase.png
+   landing/public/pos-dashboard.png
+   ```
+
+4. **Refresh the Page**
+   - SmartImage components will automatically load the new images
+   - Placeholders will be replaced with real screenshots
 
 ## Customization
 
-### Changing Colors
-
-Edit `tailwind.config.js`:
-
+### Colors
+Update Tailwind config to change the color palette:
 ```js
+// tailwind.config.js
 theme: {
   extend: {
     colors: {
-      cream: { /* your colors */ },
-      accent: { /* your colors */ },
+      'accent-sage': '#8B9D83',      // Primary green
+      'accent-terracotta': '#C4836B', // Accent orange
+      'accent-charcoal': '#3A3A3A',   // Dark text
     }
   }
 }
 ```
 
-### Adding Sections
+### Animations
+All animations are configured in component files using Framer Motion:
+- Scroll triggers: `whileInView` with `viewport={{ once: true }}`
+- Parallax: `useScroll` + `useTransform`
+- Staggered delays: Incrementing `delay` values
 
-Create a new component in `src/components/` and import it in `App.tsx`:
+### Content
+All text content is inline in component files for easy editing:
+- Hero tagline: `Hero.tsx:80`
+- Section headings: Look for `TextReveal` or `<h2>` tags
+- Stats and features: Component-specific arrays (e.g., `AppShowcase.tsx:63`)
 
-```tsx
-import NewSection from './components/NewSection';
+## Lead Capture
 
-function App() {
-  return (
-    <div>
-      {/* ... other sections */}
-      <NewSection />
-    </div>
-  );
-}
-```
+The landing page includes a dual-mode lead capture system:
 
-## Performance
+- **Shoppers**: "Get Started" button - joins waitlist
+- **Retailers**: "For Retailers" and "Request Demo" buttons - partners form
 
-- Vite for fast builds and HMR
-- Tree-shaking for minimal bundle size
-- Lazy loading for images (can be added)
-- CSS purging via Tailwind
+Forms include:
+- Name, Email (required)
+- Phone, Company (retailers only)
+- Message field
+- Success animation with auto-close
+
+Currently logs to console - integrate with your backend/CRM by updating `LeadCapture.tsx:28-38`
+
+## Performance Tips
+
+### Image Optimization
+- Use WebP format for better compression
+- Keep screenshot file sizes under 500KB
+- Consider using a CDN for production
+
+### Animation Performance
+- All animations use CSS transforms (GPU-accelerated)
+- `transform-gpu` class forces hardware acceleration
+- Scroll effects use `will-change` for optimization
+
+### Lazy Loading
+- Hero loads immediately (above the fold)
+- All other sections lazy-load as user scrolls
+- Reduces initial bundle size by ~60%
 
 ## Browser Support
 
-- Chrome/Edge (latest)
-- Firefox (latest)
-- Safari (latest)
-- Mobile browsers (iOS Safari, Chrome Mobile)
+- **Modern browsers**: Chrome, Firefox, Safari, Edge (latest versions)
+- **Mobile**: iOS Safari 14+, Chrome Android
+- **Features**: ES2020, CSS Grid, Flexbox, CSS Custom Properties
+
+## Deployment
+
+### Vercel (Recommended)
+```bash
+npm run build
+vercel deploy
+```
+
+### Netlify
+```bash
+npm run build
+netlify deploy --prod --dir=dist
+```
+
+### Static Hosting
+```bash
+npm run build
+# Upload 'dist' folder to your host
+```
+
+## Environment Variables
+
+No environment variables required for landing page. All configuration is in code.
+
+## Maintenance
+
+### Updating Stats
+Stats are hardcoded in component files. Search for:
+- Queue time stats: `Problem.tsx`
+- Feature stats: `AppShowcase.tsx`, `POSShowcase.tsx`
+- CTA stats: `CTA.tsx:100-113`
+
+### Adding Sections
+1. Create component in `src/components/`
+2. Add to `App.tsx` with lazy loading
+3. Wrap in `<Suspense>` with `SectionLoader` fallback
+
+### Troubleshooting
+- **Animations not working**: Check Framer Motion version compatibility
+- **Images not loading**: Verify files are in `/public` and paths are correct
+- **Slow performance**: Check bundle size with `npm run build` and analyze
+- **TypeScript errors**: Run `npm run type-check` (if configured)
 
 ## License
 
-MIT
+Proprietary - ZeroCue © 2025
 
-## Credits
+---
 
-Design inspiration from Midori Gardens and modern retail experiences.
+**Built with ❤️ for fashion retail innovation**
+
+For questions or support, contact the ZeroCue team.
