@@ -66,7 +66,7 @@ const Hero = () => {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.2, duration: 0.8 }}
-              className="text-6xl sm:text-7xl md:text-8xl lg:text-9xl font-bold text-accent-charcoal leading-tight mb-6"
+              className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl xl:text-9xl font-bold text-accent-charcoal leading-tight mb-6"
             >
               ZeroCue
             </motion.h1>
@@ -77,7 +77,7 @@ const Hero = () => {
               transition={{ delay: 0.3, duration: 0.8 }}
               className="mb-4"
             >
-              <TextRevealGradient className="text-2xl sm:text-3xl md:text-4xl font-medium">
+              <TextRevealGradient className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-medium">
                 Fashion retail, reimagined
               </TextRevealGradient>
             </motion.div>
@@ -86,7 +86,7 @@ const Hero = () => {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.4, duration: 0.8 }}
-              className="text-lg sm:text-xl md:text-2xl text-stone-light leading-relaxed max-w-xl"
+              className="text-base sm:text-lg md:text-xl lg:text-2xl text-stone-light leading-relaxed max-w-xl"
             >
               Self-checkout for fashion stores. Find sizes, reserve, skip queues.
             </motion.p>
@@ -99,14 +99,14 @@ const Hero = () => {
             >
               <button
                 onClick={handleGetStarted}
-                className="group px-8 py-4 bg-accent-charcoal text-cream-50 rounded-lg font-medium text-lg flex items-center justify-center gap-2 hover:bg-stone transition-colors duration-300"
+                className="group px-6 sm:px-8 py-3 sm:py-4 bg-accent-charcoal text-cream-50 rounded-lg font-medium text-base sm:text-lg flex items-center justify-center gap-2 hover:bg-stone transition-colors duration-300"
               >
                 Get Started
-                <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
+                <ArrowRight className="w-4 h-4 sm:w-5 sm:h-5 group-hover:translate-x-1 transition-transform" />
               </button>
               <button
                 onClick={handleForRetailers}
-                className="px-8 py-4 border-2 border-accent-charcoal text-accent-charcoal rounded-lg font-medium text-lg hover:bg-accent-charcoal hover:text-cream-50 transition-colors duration-300"
+                className="px-6 sm:px-8 py-3 sm:py-4 border-2 border-accent-charcoal text-accent-charcoal rounded-lg font-medium text-base sm:text-lg hover:bg-accent-charcoal hover:text-cream-50 transition-colors duration-300"
               >
                 For Retailers
               </button>
@@ -116,18 +116,18 @@ const Hero = () => {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.6, duration: 0.8 }}
-              className="grid grid-cols-3 gap-6 pt-8 border-t border-cream-300"
+              className="grid grid-cols-3 gap-4 sm:gap-6 pt-6 sm:pt-8 border-t border-cream-300"
             >
               <div>
-                <div className="text-2xl sm:text-3xl font-bold text-accent-charcoal">2 min</div>
+                <div className="text-xl sm:text-2xl md:text-3xl font-bold text-accent-charcoal">2 min</div>
                 <div className="text-xs sm:text-sm text-stone-lighter">Avg checkout</div>
               </div>
               <div>
-                <div className="text-2xl sm:text-3xl font-bold text-accent-charcoal">30%</div>
+                <div className="text-xl sm:text-2xl md:text-3xl font-bold text-accent-charcoal">30%</div>
                 <div className="text-xs sm:text-sm text-stone-lighter">Faster</div>
               </div>
               <div>
-                <div className="text-2xl sm:text-3xl font-bold text-accent-charcoal">Zero</div>
+                <div className="text-xl sm:text-2xl md:text-3xl font-bold text-accent-charcoal">Zero</div>
                 <div className="text-xs sm:text-sm text-stone-lighter">Queue time</div>
               </div>
             </motion.div>
@@ -186,8 +186,8 @@ const Hero = () => {
                     {/* App content */}
                     <div className="absolute inset-0 flex flex-col pt-16 pb-6 px-4 bg-gradient-to-b from-cream-50 to-white">
                       {/* Header */}
-                      <div className="mb-6">
-                        <h3 className="text-2xl font-bold text-accent-charcoal mb-1">ZeroCue</h3>
+                      <div className="mb-4 sm:mb-6">
+                        <h3 className="text-xl sm:text-2xl font-bold text-accent-charcoal mb-1">ZeroCue</h3>
                         <p className="text-xs text-stone-light">Shopping at Fashion Store</p>
                       </div>
 

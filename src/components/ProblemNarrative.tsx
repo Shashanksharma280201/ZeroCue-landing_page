@@ -1,12 +1,12 @@
 import { motion, useScroll, useTransform } from 'framer-motion';
 import { useRef, useState, useEffect } from 'react';
-import { Clock, Search, XCircle, TrendingDown, Users, AlertCircle, ChevronDown } from 'lucide-react';
+import { Clock, Search, XCircle, TrendingDown, Users, AlertCircle, ChevronDown, type LucideIcon } from 'lucide-react';
 
 interface ProblemStage {
   id: number;
   title: string;
   subtitle: string;
-  icon: any;
+  icon: LucideIcon;
   stat: string;
   statLabel: string;
   color: string;

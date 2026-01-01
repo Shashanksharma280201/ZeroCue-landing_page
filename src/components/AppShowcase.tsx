@@ -1,6 +1,5 @@
 import { MacbookScroll } from './ui/MacbookScroll';
 import { TextReveal } from './ui/TextReveal';
-import { SmartImage } from './ui/SmartImage';
 import { Sparkles, Smartphone, Zap } from 'lucide-react';
 
 const AppShowcase = () => {

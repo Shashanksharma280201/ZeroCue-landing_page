@@ -57,7 +57,7 @@ export const TransitionBridge = () => {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.8 }}
-          className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-bold text-accent-charcoal mb-8"
+          className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-bold text-accent-charcoal mb-6 sm:mb-8"
         >
           Ready for a better way?
         </motion.h2>
@@ -68,7 +68,7 @@ export const TransitionBridge = () => {
           whileInView={{ scaleX: 1 }}
           viewport={{ once: true }}
           transition={{ duration: 1, delay: 0.3 }}
-          className="w-32 h-1 bg-gradient-to-r from-accent-sage via-accent-terracotta to-accent-charcoal mx-auto mb-8"
+          className="w-24 sm:w-32 h-1 bg-gradient-to-r from-accent-sage via-accent-terracotta to-accent-charcoal mx-auto mb-6 sm:mb-8"
         />
 
         {/* Scroll indicator */}
@@ -77,7 +77,7 @@ export const TransitionBridge = () => {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.8, delay: 0.5 }}
-          className="flex flex-col items-center gap-4"
+          className="flex flex-col items-center gap-3 sm:gap-4"
         >
           <motion.div
             animate={{ y: [0, 10, 0] }}
@@ -88,8 +88,8 @@ export const TransitionBridge = () => {
             }}
             className="flex flex-col items-center gap-2"
           >
-            <span className="text-stone-light text-lg">Continue scrolling</span>
-            <ArrowDown className="w-6 h-6 text-accent-sage" />
+            <span className="text-stone-light text-base sm:text-lg">Continue scrolling</span>
+            <ArrowDown className="w-5 h-5 sm:w-6 sm:h-6 text-accent-sage" />
           </motion.div>
         </motion.div>
       </motion.div>

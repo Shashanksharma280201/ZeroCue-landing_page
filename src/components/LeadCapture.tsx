@@ -1,6 +1,7 @@
 import { motion, AnimatePresence } from 'framer-motion';
 import { X, Mail, Building2, Phone, Send, CheckCircle } from 'lucide-react';
-import { useState, FormEvent } from 'react';
+import { useState } from 'react';
+import type { FormEvent } from 'react';
 
 interface LeadCaptureProps {
   isOpen: boolean;
@@ -52,7 +53,7 @@ const LeadCapture = ({ isOpen, onClose, type }: LeadCaptureProps) => {
         setIsSuccess(false);
         onClose();
       }, 3000);
-    } catch (err) {
+    } catch {
       setError('Failed to submit. Please try again.');
     } finally {
       setIsSubmitting(false);

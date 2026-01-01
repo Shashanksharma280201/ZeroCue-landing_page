@@ -5,7 +5,6 @@ import {
   QrCode,
   Calendar,
   BarChart3,
-  Store,
   Users,
   Building2,
   CheckCircle,
